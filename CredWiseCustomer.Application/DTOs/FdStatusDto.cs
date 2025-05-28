@@ -12,5 +12,8 @@ namespace CredWiseCustomer.Application.DTOs
         public DateTime? MaturityDate { get; set; }
         public decimal? MaturityAmount { get; set; }
         public DateTime CreatedAt { get; set; }
+        public string? FdTypeName { get; set; }
+        public bool IsActive { get; set; }
+        public string CreatedBy { get; set; } = null!;
     }
 } 

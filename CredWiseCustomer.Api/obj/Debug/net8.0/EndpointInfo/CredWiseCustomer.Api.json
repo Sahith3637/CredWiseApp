@@ -470,6 +470,239 @@
         }
       }
     },
+    "/api/LoanApplication/gold": {
+      "post": {
+        "tags": [
+          "LoanApplication"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GoldLoanApplicationDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GoldLoanApplicationDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GoldLoanApplicationDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoanApplicationResponseDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoanApplicationResponseDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoanApplicationResponseDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/LoanApplication/home": {
+      "post": {
+        "tags": [
+          "LoanApplication"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HomeLoanApplicationDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HomeLoanApplicationDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/HomeLoanApplicationDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoanApplicationResponseDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoanApplicationResponseDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoanApplicationResponseDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/LoanApplication/personal": {
+      "post": {
+        "tags": [
+          "LoanApplication"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PersonalLoanApplicationDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PersonalLoanApplicationDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PersonalLoanApplicationDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoanApplicationResponseDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoanApplicationResponseDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoanApplicationResponseDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/LoanApplication/{loanApplicationId}": {
+      "get": {
+        "tags": [
+          "LoanApplication"
+        ],
+        "parameters": [
+          {
+            "name": "loanApplicationId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoanApplicationResponseDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoanApplicationResponseDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoanApplicationResponseDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/LoanApplication/user/{userId}": {
+      "get": {
+        "tags": [
+          "LoanApplication"
+        ],
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LoanApplicationResponseDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LoanApplicationResponseDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LoanApplicationResponseDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Repayment/schedule/{loanApplicationId}": {
       "get": {
         "tags": [
@@ -1328,6 +1561,173 @@
         },
         "additionalProperties": false
       },
+      "GoldLoanApplicationDto": {
+        "required": [
+          "aadhaar",
+          "address",
+          "createdBy",
+          "dob",
+          "employmentType",
+          "gender",
+          "goldPurity",
+          "goldWeight",
+          "income",
+          "loanProductId",
+          "requestedAmount",
+          "requestedTenure",
+          "userId"
+        ],
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "loanProductId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "requestedAmount": {
+            "minimum": 1000,
+            "type": "number",
+            "format": "double"
+          },
+          "requestedTenure": {
+            "maximum": 360,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "gender": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "dob": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "aadhaar": {
+            "maxLength": 12,
+            "minLength": 12,
+            "pattern": "^\\d{12}$",
+            "type": "string"
+          },
+          "address": {
+            "maxLength": 500,
+            "minLength": 0,
+            "type": "string"
+          },
+          "income": {
+            "minimum": 0,
+            "type": "number",
+            "format": "double"
+          },
+          "employmentType": {
+            "minLength": 1,
+            "pattern": "^(Salaried|Self-Employed)$",
+            "type": "string"
+          },
+          "createdBy": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "goldWeight": {
+            "minimum": 0.1,
+            "type": "number",
+            "format": "double"
+          },
+          "goldPurity": {
+            "minLength": 1,
+            "pattern": "^(22K|24K)$",
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "HomeLoanApplicationDto": {
+        "required": [
+          "aadhaar",
+          "address",
+          "createdBy",
+          "dob",
+          "downPaymentPercentage",
+          "employmentType",
+          "gender",
+          "income",
+          "loanProductId",
+          "propertyAddress",
+          "requestedAmount",
+          "requestedTenure",
+          "userId"
+        ],
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "loanProductId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "requestedAmount": {
+            "minimum": 1000,
+            "type": "number",
+            "format": "double"
+          },
+          "requestedTenure": {
+            "maximum": 360,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "gender": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "dob": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "aadhaar": {
+            "maxLength": 12,
+            "minLength": 12,
+            "pattern": "^\\d{12}$",
+            "type": "string"
+          },
+          "address": {
+            "maxLength": 500,
+            "minLength": 0,
+            "type": "string"
+          },
+          "income": {
+            "minimum": 0,
+            "type": "number",
+            "format": "double"
+          },
+          "employmentType": {
+            "minLength": 1,
+            "pattern": "^(Salaried|Self-Employed)$",
+            "type": "string"
+          },
+          "createdBy": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "propertyAddress": {
+            "maxLength": 500,
+            "minLength": 0,
+            "type": "string"
+          },
+          "downPaymentPercentage": {
+            "maximum": 100,
+            "minimum": 0,
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
       "HowItWorksStepDto": {
         "type": "object",
         "properties": {
@@ -1341,6 +1741,33 @@
           },
           "description": {
             "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LoanApplicationResponseDto": {
+        "type": "object",
+        "properties": {
+          "loanApplicationId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "decisionReason": {
+            "type": "string",
+            "nullable": true
+          },
+          "decisionDate": {
+            "type": "string",
+            "format": "date-time",
             "nullable": true
           }
         },
@@ -1499,6 +1926,77 @@
           "reference": {
             "type": "string",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PersonalLoanApplicationDto": {
+        "required": [
+          "aadhaar",
+          "address",
+          "createdBy",
+          "dob",
+          "employmentType",
+          "gender",
+          "income",
+          "loanProductId",
+          "requestedAmount",
+          "requestedTenure",
+          "userId"
+        ],
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "loanProductId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "requestedAmount": {
+            "minimum": 1000,
+            "type": "number",
+            "format": "double"
+          },
+          "requestedTenure": {
+            "maximum": 360,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "gender": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "dob": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "aadhaar": {
+            "maxLength": 12,
+            "minLength": 12,
+            "pattern": "^\\d{12}$",
+            "type": "string"
+          },
+          "address": {
+            "maxLength": 500,
+            "minLength": 0,
+            "type": "string"
+          },
+          "income": {
+            "minimum": 0,
+            "type": "number",
+            "format": "double"
+          },
+          "employmentType": {
+            "minLength": 1,
+            "pattern": "^(Salaried|Self-Employed)$",
+            "type": "string"
+          },
+          "createdBy": {
+            "minLength": 1,
+            "type": "string"
           }
         },
         "additionalProperties": false

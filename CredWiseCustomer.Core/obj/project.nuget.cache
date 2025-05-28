@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Fx/GphVgA/o=",
+  "dgSpecHash": "GK6kbbtJIGA=",
   "success": true,
-  "projectFilePath": "C:\\Applications\\CredWise\\New folder\\CredWise\\CredWise\\CredWiseCustomer.Core\\CredWiseCustomer.Core.csproj",
+  "projectFilePath": "C:\\Applications\\CredWise\\Backiness\\CredWise\\CredWise\\CredWiseCustomer.Core\\CredWiseCustomer.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Sai Sahith Ajju\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Sai Sahith Ajju\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

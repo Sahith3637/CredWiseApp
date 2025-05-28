@@ -19,7 +19,9 @@ namespace CredWiseCustomer.Infrastructure.Repositories
 
         public async Task<Fdapplication?> GetFdApplicationByIdAsync(int fdApplicationId)
         {
-            return await _context.Fdapplications.FindAsync(fdApplicationId);
+            return await _context.Fdapplications
+                .Include(f => f.Fdtype)
+                .FirstOrDefaultAsync(f => f.FdapplicationId == fdApplicationId);
         }
 
         public async Task<IEnumerable<Fdapplication>> GetFdsByUserIdAsync(int userId)

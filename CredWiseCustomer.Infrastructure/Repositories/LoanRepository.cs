@@ -29,6 +29,15 @@ namespace CredWiseCustomer.Infrastructure.Repositories
                 .ToListAsync();
         }
 
+        public async Task<IEnumerable<LoanApplication>> GetAllLoanApplicationsAsync()
+        {
+            return await _context.LoanApplications
+                .Include(l => l.User)
+                .Include(l => l.LoanProduct)
+                .OrderByDescending(l => l.CreatedAt)
+                .ToListAsync();
+        }
+
         public async Task<LoanProduct> GetLoanProductByIdAsync(int loanProductId)
         {
             return await _context.LoanProducts.FindAsync(loanProductId);

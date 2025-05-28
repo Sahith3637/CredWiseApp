@@ -264,6 +264,136 @@
     ]
   },
   {
+    "ContainingType": "CredWiseCustomer.Api.Controllers.LoanApplicationController",
+    "Method": "GetLoanApplicationStatus",
+    "RelativePath": "api/LoanApplication/{loanApplicationId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "loanApplicationId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "CredWiseCustomer.Application.DTOs.LoanApplicationResponseDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CredWiseCustomer.Api.Controllers.LoanApplicationController",
+    "Method": "ApplyForGoldLoan",
+    "RelativePath": "api/LoanApplication/gold",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "application",
+        "Type": "CredWiseCustomer.Application.DTOs.GoldLoanApplicationDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "CredWiseCustomer.Application.DTOs.LoanApplicationResponseDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CredWiseCustomer.Api.Controllers.LoanApplicationController",
+    "Method": "ApplyForHomeLoan",
+    "RelativePath": "api/LoanApplication/home",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "application",
+        "Type": "CredWiseCustomer.Application.DTOs.HomeLoanApplicationDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "CredWiseCustomer.Application.DTOs.LoanApplicationResponseDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CredWiseCustomer.Api.Controllers.LoanApplicationController",
+    "Method": "ApplyForPersonalLoan",
+    "RelativePath": "api/LoanApplication/personal",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "application",
+        "Type": "CredWiseCustomer.Application.DTOs.PersonalLoanApplicationDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "CredWiseCustomer.Application.DTOs.LoanApplicationResponseDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CredWiseCustomer.Api.Controllers.LoanApplicationController",
+    "Method": "GetUserLoanApplications",
+    "RelativePath": "api/LoanApplication/user/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[CredWiseCustomer.Application.DTOs.LoanApplicationResponseDto, CredWiseCustomer.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "CredWiseCustomer.Api.Controllers.RepaymentController",
     "Method": "SubmitPayment",
     "RelativePath": "api/Repayment/pay",

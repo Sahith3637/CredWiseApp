@@ -36,3 +36,16 @@ C:\Applications\CredWise\Business\CredBackend\CredWise\Authentication.Service\ob
 C:\Applications\CredWise\Business\CredBackend\CredWise\Authentication.Service\obj\Debug\net8.0\refint\Authentication.Service.dll
 C:\Applications\CredWise\Business\CredBackend\CredWise\Authentication.Service\obj\Debug\net8.0\Authentication.Service.pdb
 C:\Applications\CredWise\Business\CredBackend\CredWise\Authentication.Service\obj\Debug\net8.0\ref\Authentication.Service.dll
+C:\Applications\CredWise\Backiness\CredWise\CredWise\Authentication.Service\bin\Debug\net8.0\Authentication.Service.deps.json
+C:\Applications\CredWise\Backiness\CredWise\CredWise\Authentication.Service\bin\Debug\net8.0\Authentication.Service.dll
+C:\Applications\CredWise\Backiness\CredWise\CredWise\Authentication.Service\bin\Debug\net8.0\Authentication.Service.pdb
+C:\Applications\CredWise\Backiness\CredWise\CredWise\Authentication.Service\obj\Debug\net8.0\Authentication.Service.csproj.AssemblyReference.cache
+C:\Applications\CredWise\Backiness\CredWise\CredWise\Authentication.Service\obj\Debug\net8.0\Authentication.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Applications\CredWise\Backiness\CredWise\CredWise\Authentication.Service\obj\Debug\net8.0\Authentication.Service.AssemblyInfoInputs.cache
+C:\Applications\CredWise\Backiness\CredWise\CredWise\Authentication.Service\obj\Debug\net8.0\Authentication.Service.AssemblyInfo.cs
+C:\Applications\CredWise\Backiness\CredWise\CredWise\Authentication.Service\obj\Debug\net8.0\Authentication.Service.csproj.CoreCompileInputs.cache
+C:\Applications\CredWise\Backiness\CredWise\CredWise\Authentication.Service\obj\Debug\net8.0\Authentication.Service.sourcelink.json
+C:\Applications\CredWise\Backiness\CredWise\CredWise\Authentication.Service\obj\Debug\net8.0\Authentication.Service.dll
+C:\Applications\CredWise\Backiness\CredWise\CredWise\Authentication.Service\obj\Debug\net8.0\refint\Authentication.Service.dll
+C:\Applications\CredWise\Backiness\CredWise\CredWise\Authentication.Service\obj\Debug\net8.0\Authentication.Service.pdb
+C:\Applications\CredWise\Backiness\CredWise\CredWise\Authentication.Service\obj\Debug\net8.0\ref\Authentication.Service.dll

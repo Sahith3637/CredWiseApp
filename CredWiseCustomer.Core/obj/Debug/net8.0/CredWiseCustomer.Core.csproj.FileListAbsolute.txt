@@ -84,3 +84,18 @@ C:\Applications\CredWise\New folder\CredWise\CredWise\CredWiseCustomer.Core\obj\
 C:\Applications\CredWise\New folder\CredWise\CredWise\CredWiseCustomer.Core\obj\Debug\net8.0\CredWiseCustomer.Core.pdb
 C:\Applications\CredWise\New folder\CredWise\CredWise\CredWiseCustomer.Core\obj\Debug\net8.0\CredWiseCustomer.Core.genruntimeconfig.cache
 C:\Applications\CredWise\New folder\CredWise\CredWise\CredWiseCustomer.Core\obj\Debug\net8.0\ref\CredWiseCustomer.Core.dll
+C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Core\bin\Debug\net8.0\CredWiseCustomer.Core.deps.json
+C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Core\bin\Debug\net8.0\CredWiseCustomer.Core.runtimeconfig.json
+C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Core\bin\Debug\net8.0\CredWiseCustomer.Core.dll
+C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Core\bin\Debug\net8.0\CredWiseCustomer.Core.pdb
+C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Core\obj\Debug\net8.0\CredWiseCustomer.Core.csproj.AssemblyReference.cache
+C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Core\obj\Debug\net8.0\CredWiseCustomer.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Core\obj\Debug\net8.0\CredWiseCustomer.Core.AssemblyInfoInputs.cache
+C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Core\obj\Debug\net8.0\CredWiseCustomer.Core.AssemblyInfo.cs
+C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Core\obj\Debug\net8.0\CredWiseCustomer.Core.csproj.CoreCompileInputs.cache
+C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Core\obj\Debug\net8.0\CredWiseCustomer.Core.sourcelink.json
+C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Core\obj\Debug\net8.0\CredWiseCustomer.Core.dll
+C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Core\obj\Debug\net8.0\refint\CredWiseCustomer.Core.dll
+C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Core\obj\Debug\net8.0\CredWiseCustomer.Core.pdb
+C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Core\obj\Debug\net8.0\CredWiseCustomer.Core.genruntimeconfig.cache
+C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Core\obj\Debug\net8.0\ref\CredWiseCustomer.Core.dll

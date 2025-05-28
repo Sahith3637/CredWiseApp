@@ -9,7 +9,8 @@ namespace CredWiseCustomer.Application.Mappings
         public FdProfile()
         {
             CreateMap<ApplyFdDto, Fdapplication>();
-            CreateMap<Fdapplication, FdStatusDto>();
+            CreateMap<Fdapplication, FdStatusDto>()
+                .ForMember(dest => dest.FdTypeName, opt => opt.MapFrom(src => src.Fdtype != null ? src.Fdtype.Name : null));
         }
     }
 }

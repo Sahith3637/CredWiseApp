@@ -32,6 +32,12 @@ public partial class LoanProductDocument
     [StringLength(100)]
     public string? ModifiedBy { get; set; }
 
+    public int? LoanApplicationId { get; set; }
+
+    [ForeignKey("LoanApplicationId")]
+    [InverseProperty("LoanProductDocuments")]
+    public virtual LoanApplication? LoanApplication { get; set; }
+
     [ForeignKey("LoanProductId")]
     [InverseProperty("LoanProductDocuments")]
     public virtual LoanProduct LoanProduct { get; set; } = null!;

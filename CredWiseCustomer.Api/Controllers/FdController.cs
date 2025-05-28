@@ -17,11 +17,12 @@ namespace CredWiseCustomer.Api.Controllers
 
         // POST: api/Fd
         [HttpPost]
-        public async Task<ActionResult<int>> ApplyForFd([FromBody] ApplyFdDto dto)
+        public async Task<ActionResult<FdStatusDto>> ApplyForFd([FromBody] ApplyFdDto dto)
         {
             dto.CreatedBy = "Customer";
             var fdId = await _fdService.ApplyForFdAsync(dto);
-            return CreatedAtAction(nameof(GetFdStatus), new { fdApplicationId = fdId }, fdId);
+            var fdStatus = await _fdService.GetFdStatusAsync(fdId);
+            return CreatedAtAction(nameof(GetFdStatus), new { fdApplicationId = fdId }, fdStatus);
         }
 
         // GET: api/Fd/{fdApplicationId}

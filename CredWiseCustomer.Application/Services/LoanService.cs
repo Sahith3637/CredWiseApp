@@ -88,6 +88,12 @@ namespace CredWiseCustomer.Application.Services
             return loans.Select(_mapper.Map<LoanStatusDto>);
         }
 
+        public async Task<IEnumerable<LoanStatusDto>> GetAllLoanApplicationsAsync()
+        {
+            var loans = await _repo.GetAllLoanApplicationsAsync();
+            return loans.Select(_mapper.Map<LoanStatusDto>);
+        }
+
         public async Task<IEnumerable<LoanProductDocumentDto>> GetRequiredDocumentsAsync(int loanProductId)
         {
             var docs = await _repo.GetRequiredDocumentsAsync(loanProductId);
@@ -100,11 +106,12 @@ namespace CredWiseCustomer.Application.Services
             });
         }
 
-        public async Task<bool> UploadLoanProductDocumentAsync(int loanProductId, string documentName, byte[] documentContent, string createdBy)
+        public async Task<bool> UploadLoanProductDocumentAsync(int loanProductId, int? loanApplicationId, string documentName, byte[] documentContent, string createdBy)
         {
             var doc = new LoanProductDocument
             {
                 LoanProductId = loanProductId,
+                LoanApplicationId = loanApplicationId,
                 DocumentName = documentName,
                 DocumentContent = documentContent,
                 IsActive = true,

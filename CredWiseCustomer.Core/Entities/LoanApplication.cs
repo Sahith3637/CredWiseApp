@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CredWiseCustomer.Core.Entities;
 
-[Index("Aadhaar", Name = "UQ__LoanAppl__C4B33369E6CE9FEF", IsUnique = true)]
+[Index("Aadhaar", Name = "UQ__LoanAppl__C4B33369E0397A6A", IsUnique = true)]
 public partial class LoanApplication
 {
     [Key]
@@ -69,6 +69,12 @@ public partial class LoanApplication
     public virtual ICollection<DecisionAppLog> DecisionAppLogs { get; set; } = new List<DecisionAppLog>();
 
     [InverseProperty("LoanApplication")]
+    public virtual ICollection<GoldLoanApplication> GoldLoanApplications { get; set; } = new List<GoldLoanApplication>();
+
+    [InverseProperty("LoanApplication")]
+    public virtual ICollection<HomeLoanApplication> HomeLoanApplications { get; set; } = new List<HomeLoanApplication>();
+
+    [InverseProperty("LoanApplication")]
     public virtual ICollection<LoanBankStatement> LoanBankStatements { get; set; } = new List<LoanBankStatement>();
 
     [ForeignKey("LoanProductId")]
@@ -84,4 +90,7 @@ public partial class LoanApplication
     [ForeignKey("UserId")]
     [InverseProperty("LoanApplications")]
     public virtual User User { get; set; } = null!;
+
+    [InverseProperty("LoanApplication")]
+    public virtual ICollection<LoanProductDocument> LoanProductDocuments { get; set; } = new List<LoanProductDocument>();
 }

@@ -1,6 +1,9 @@
 # CredWise Customer Management System
 
 ## Recent Updates
+- **Loan Product Documents**: Added support for associating documents with specific loan applications through the `LoanApplicationId` field.
+- **Get All Loan Applications**: Added new endpoint `GET /api/LoanApplication/all` in `LoanApplicationController` to retrieve all loan applications with user and product details.
+- **Loan Application APIs**: Gold, Home, and Personal loan application APIs are now available in `LoanApplicationController`.
 - **Repayment API**: The repayment response (`RepaymentScheduleDto`) now includes a `paymentType` property, reflecting the payment method used for each installment.
 - **How It Works API**: Added `GET /api/HowItWorks` endpoint, returning the loan process steps as a list of `HowItWorksStepDto`.
 - **Document Upload**: Added `POST /api/Loan/upload-loan-product-document` endpoint for uploading required documents for loan products.
@@ -138,19 +141,36 @@ The solution is organized into multiple projects following Clean Architecture pr
 - **Soft Delete User**: `DELETE /api/User/{id}`
 - **Restore User**: `POST /api/User/{id}/restore`
 
-### Loan Management
+### Loan Management (LoanController)
 - **Apply for Loan**: `POST /api/Loan`
   - Request: `ApplyLoanDto` (see DTOs section)
   - Response: `LoanStatusDto`
 - **Get Loan Status**: `GET /api/Loan/{loanApplicationId}`
 - **Get All Loans for User**: `GET /api/Loan/user/{userId}`
+- **Get All Loan Applications**: `GET /api/Loan/all`
+  - Response: List of `LoanStatusDto` with user and product details
 - **Upload Loan Product Document**: `POST /api/Loan/upload-loan-product-document` (multipart/form-data)
   - Request: `UploadLoanProductDocumentDto` (see DTOs section)
   - Response: `{ message: string }`
 
+### Loan Application Management (LoanApplicationController)
+- **Apply for Gold Loan**: `POST /api/LoanApplication/gold`
+  - Request: `GoldLoanApplicationDto`
+  - Response: `LoanApplicationResponseDto`
+- **Apply for Home Loan**: `POST /api/LoanApplication/home`
+  - Request: `HomeLoanApplicationDto`
+  - Response: `LoanApplicationResponseDto`
+- **Apply for Personal Loan**: `POST /api/LoanApplication/personal`
+  - Request: `PersonalLoanApplicationDto`
+  - Response: `LoanApplicationResponseDto`
+- **Get Loan Application Status**: `GET /api/LoanApplication/{loanApplicationId}`
+- **Get All Loan Applications for User**: `GET /api/LoanApplication/user/{userId}`
+- **Get All Loan Applications**: `GET /api/LoanApplication/all`
+  - Response: List of `LoanApplicationResponseDto` with all details
+
 ### Repayment Management
 - **Get Repayment Schedule**: `GET /api/Repayment/schedule/{loanApplicationId}`
-  - Response: List of `RepaymentScheduleDto` (now includes `paymentType`)
+  - Response: List of `RepaymentScheduleDto` (includes `paymentType`)
 - **Submit Repayment**: `POST /api/Repayment/pay`
   - Request: `SubmitPaymentDto`
   - Response: `{ message: string, paymentType: string }`
@@ -180,7 +200,13 @@ The solution is organized into multiple projects following Clean Architecture pr
 - `ApplyLoanDto`: UserId, LoanProductId, RequestedAmount, RequestedTenure, Gender, DOB, Aadhaar, Address, Income, EmploymentType, CreatedBy, AdditionalDetails (dictionary for type-specific fields)
 - `LoanStatusDto`: LoanapplicationId, UserId, LoanProductId, RequestedAmount, RequestedTenure, Status, DecisionDate, DecisionReason, CreatedAt
 - `LoanProductDocumentDto`: LoanProductDocumentId, LoanProductId, DocumentName, IsActive
-- `UploadLoanProductDocumentDto`: LoanProductId, DocumentName, File (IFormFile)
+- `UploadLoanProductDocumentDto`: LoanProductId, LoanApplicationId (optional), DocumentName, File (IFormFile)
+
+### Loan Application
+- `GoldLoanApplicationDto`: UserId, LoanProductId, RequestedAmount, RequestedTenure, Gender, DOB, Aadhaar, Address, Income, EmploymentType, CreatedBy, GoldWeight, GoldPurity
+- `HomeLoanApplicationDto`: UserId, LoanProductId, RequestedAmount, RequestedTenure, Gender, DOB, Aadhaar, Address, Income, EmploymentType, CreatedBy, PropertyAddress, DownPaymentPercentage
+- `PersonalLoanApplicationDto`: UserId, LoanProductId, RequestedAmount, RequestedTenure, Gender, DOB, Aadhaar, Address, Income, EmploymentType, CreatedBy
+- `LoanApplicationResponseDto`: LoanApplicationId, UserId, LoanProductId, RequestedAmount, RequestedTenure, Status, DecisionDate, DecisionReason, CreatedAt, GoldLoanDetails, HomeLoanDetails, PersonalLoanDetails
 
 ### Repayment
 - `RepaymentScheduleDto`: RepaymentId, LoanApplicationId, InstallmentNumber, DueDate, PrincipalAmount, InterestAmount, TotalAmount, Status, PaymentType
