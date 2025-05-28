@@ -13,6 +13,7 @@ using System.Text;
 using CredWiseCustomer.Api;
 using Loggers.service.Services;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container
@@ -60,6 +61,8 @@ builder.Services.AddScoped<IFdService, FdService>();
 builder.Services.AddScoped<ILoanService, LoanService>();
 builder.Services.AddScoped<IRepaymentService, RepaymentService>();
 builder.Services.AddScoped<IReturnsCalculatorService, ReturnsCalculatorService>();
+builder.Services.AddScoped<ILoanApplicationService, LoanApplicationService>();
+builder.Services.AddScoped<ILoanApplicationRepository, LoanApplicationRepository>();
 
 
 // Register validators

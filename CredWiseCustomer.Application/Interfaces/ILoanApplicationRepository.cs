@@ -1,6 +1,6 @@
 using CredWiseCustomer.Core.Entities;
 
-namespace CredWiseCustomer.Core.Interfaces;
+namespace CredWiseCustomer.Application.Interfaces;
 
 public interface ILoanApplicationRepository
 {

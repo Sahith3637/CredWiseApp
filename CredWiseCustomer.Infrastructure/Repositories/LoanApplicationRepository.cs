@@ -1,5 +1,6 @@
+using CredWiseCustomer.Application.Interfaces;
 using CredWiseCustomer.Core.Entities;
-using CredWiseCustomer.Core.Interfaces;
+
 using CredWiseCustomer.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 

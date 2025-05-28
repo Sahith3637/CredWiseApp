@@ -2,9 +2,9 @@ using AutoMapper;
 using CredWiseCustomer.Application.DTOs;
 using CredWiseCustomer.Application.Interfaces;
 using CredWiseCustomer.Core.Entities;
-using CredWiseCustomer.Core.Interfaces;
 
-namespace CredWiseCustomer.Infrastructure.Services;
+
+namespace CredWiseCustomer.Application.Services;
 
 public class LoanApplicationService : ILoanApplicationService
 {
