@@ -13,7 +13,6 @@ namespace CredWiseCustomer.Application.Mappings
                 .ForMember(dest => dest.LoanPurpose, opt => opt.MapFrom(src => src.LoanPurpose))
                 .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name))
                 .ForMember(dest => dest.PhoneNumber, opt => opt.MapFrom(src => src.PhoneNumber));
-
             CreateMap<LoanEnquiry, LoanEnquiryResponseDto>();
         }
     }

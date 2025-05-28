@@ -677,6 +677,14 @@ C:\Applications\CredWise\New folder\CredWise\CredWise\CredWiseCustomer.Api\obj\D
 C:\Applications\CredWise\New folder\CredWise\CredWise\CredWiseCustomer.Api\obj\Debug\net8.0\CredWiseCustomer.Api.pdb
 C:\Applications\CredWise\New folder\CredWise\CredWise\CredWiseCustomer.Api\obj\Debug\net8.0\CredWiseCustomer.Api.genruntimeconfig.cache
 C:\Applications\CredWise\New folder\CredWise\CredWise\CredWiseCustomer.Api\obj\Debug\net8.0\ref\CredWiseCustomer.Api.dll
+C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Api\obj\Debug\net8.0\CredWiseCustomer.Api.csproj.AssemblyReference.cache
+C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Api\obj\Debug\net8.0\CredWiseCustomer.Api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Api\obj\Debug\net8.0\CredWiseCustomer.Api.AssemblyInfoInputs.cache
+C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Api\obj\Debug\net8.0\CredWiseCustomer.Api.AssemblyInfo.cs
+C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Api\obj\Debug\net8.0\CredWiseCustomer.Api.csproj.CoreCompileInputs.cache
+C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Api\obj\Debug\net8.0\CredWiseCustomer.Api.MvcApplicationPartsAssemblyInfo.cs
+C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Api\obj\Debug\net8.0\CredWiseCustomer.Api.MvcApplicationPartsAssemblyInfo.cache
+C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Api\obj\Debug\net8.0\CredWiseCustomer.Api.sourcelink.json
 C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Api\bin\Debug\net8.0\appsettings.Development.json
 C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Api\bin\Debug\net8.0\appsettings.json
 C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Api\bin\Debug\net8.0\CredWiseCustomer.Api.staticwebassets.endpoints.json
@@ -778,14 +786,6 @@ C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Api\bin\De
 C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Api\bin\Debug\net8.0\CredWiseCustomer.Application.pdb
 C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Api\bin\Debug\net8.0\CredWiseCustomer.Infrastructure.pdb
 C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Api\bin\Debug\net8.0\CredWiseCustomer.Core.pdb
-C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Api\obj\Debug\net8.0\CredWiseCustomer.Api.csproj.AssemblyReference.cache
-C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Api\obj\Debug\net8.0\CredWiseCustomer.Api.GeneratedMSBuildEditorConfig.editorconfig
-C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Api\obj\Debug\net8.0\CredWiseCustomer.Api.AssemblyInfoInputs.cache
-C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Api\obj\Debug\net8.0\CredWiseCustomer.Api.AssemblyInfo.cs
-C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Api\obj\Debug\net8.0\CredWiseCustomer.Api.csproj.CoreCompileInputs.cache
-C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Api\obj\Debug\net8.0\CredWiseCustomer.Api.MvcApplicationPartsAssemblyInfo.cs
-C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Api\obj\Debug\net8.0\CredWiseCustomer.Api.MvcApplicationPartsAssemblyInfo.cache
-C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Api\obj\Debug\net8.0\CredWiseCustomer.Api.sourcelink.json
 C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Api\obj\Debug\net8.0\scopedcss\bundle\CredWiseCustomer.Api.styles.css
 C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Api\obj\Debug\net8.0\staticwebassets.build.json
 C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Api\obj\Debug\net8.0\staticwebassets.development.json

@@ -1,6 +1,7 @@
 using CredWiseCustomer.Application.DTOs;
 using CredWiseCustomer.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace CredWiseCustomer.Api.Controllers
 {
@@ -8,17 +9,17 @@ namespace CredWiseCustomer.Api.Controllers
     [Route("api/[controller]")]
     public class LoanEnquiryController : ControllerBase
     {
-        private readonly ILoanEnquiryService _loanEnquiryService;
+        private readonly ILoanEnquiryService _service;
 
-        public LoanEnquiryController(ILoanEnquiryService loanEnquiryService)
+        public LoanEnquiryController(ILoanEnquiryService service)
         {
-            _loanEnquiryService = loanEnquiryService;
+            _service = service;
         }
 
         [HttpPost]
-        public async Task<ActionResult<LoanEnquiryResponseDto>> SubmitEnquiry([FromBody] LoanEnquiryRequestDto dto)
+        public async Task<ActionResult<LoanEnquiryResponseDto>> AddEnquiry([FromBody] LoanEnquiryRequestDto dto)
         {
-            var result = await _loanEnquiryService.AddEnquiryAsync(dto);
+            var result = await _service.AddEnquiryAsync(dto);
             return Ok(result);
         }
     }

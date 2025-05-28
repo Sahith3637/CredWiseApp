@@ -346,7 +346,7 @@
         }
       }
     },
-    "/api/LoanApplication": {
+    "/api/LoanApplication/gold": {
       "post": {
         "tags": [
           "LoanApplication"
@@ -355,17 +355,113 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ApplyLoanDto"
+                "$ref": "#/components/schemas/GoldLoanApplicationDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/ApplyLoanDto"
+                "$ref": "#/components/schemas/GoldLoanApplicationDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/ApplyLoanDto"
+                "$ref": "#/components/schemas/GoldLoanApplicationDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoanApplicationResponseDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoanApplicationResponseDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoanApplicationResponseDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/LoanApplication/home": {
+      "post": {
+        "tags": [
+          "LoanApplication"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HomeLoanApplicationDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HomeLoanApplicationDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/HomeLoanApplicationDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoanApplicationResponseDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoanApplicationResponseDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoanApplicationResponseDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/LoanApplication/personal": {
+      "post": {
+        "tags": [
+          "LoanApplication"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PersonalLoanApplicationDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PersonalLoanApplicationDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PersonalLoanApplicationDto"
               }
             }
           }
@@ -698,112 +794,6 @@
         }
       }
     },
-    "/api/User/decode": {
-      "post": {
-        "tags": [
-          "User"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "string"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "type": "string"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "type": "string"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/User": {
-      "post": {
-        "tags": [
-          "User"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateUserDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateUserDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateUserDto"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/UserDtoApiResponse"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/UserDtoApiResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/UserDtoApiResponse"
-                }
-              }
-            }
-          }
-        }
-      },
-      "get": {
-        "tags": [
-          "User"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/UserDtoIEnumerableApiResponse"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/UserDtoIEnumerableApiResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/UserDtoIEnumerableApiResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/api/User/{id}": {
       "get": {
         "tags": [
@@ -842,175 +832,30 @@
             }
           }
         }
-      },
-      "put": {
-        "tags": [
-          "User"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdateUserDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdateUserDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdateUserDto"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/UserDtoApiResponse"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/UserDtoApiResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/UserDtoApiResponse"
-                }
-              }
-            }
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "User"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ObjectApiResponse"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ObjectApiResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ObjectApiResponse"
-                }
-              }
-            }
-          }
-        }
       }
     },
-    "/api/User/email/{email}": {
+    "/api/User": {
       "get": {
         "tags": [
           "User"
         ],
-        "parameters": [
-          {
-            "name": "email",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "OK",
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/UserDtoApiResponse"
+                  "$ref": "#/components/schemas/UserDtoIEnumerableApiResponse"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/UserDtoApiResponse"
+                  "$ref": "#/components/schemas/UserDtoIEnumerableApiResponse"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/UserDtoApiResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/User/{id}/restore": {
-      "post": {
-        "tags": [
-          "User"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ObjectApiResponse"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ObjectApiResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ObjectApiResponse"
+                  "$ref": "#/components/schemas/UserDtoIEnumerableApiResponse"
                 }
               }
             }
@@ -1114,76 +959,6 @@
         }
       }
     },
-    "/api/User/admin-only": {
-      "get": {
-        "tags": [
-          "User"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/StringApiResponse"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/StringApiResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/StringApiResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/User/admin-or-customer": {
-      "get": {
-        "tags": [
-          "User"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/StringApiResponse"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/StringApiResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/StringApiResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/User/logtest": {
-      "get": {
-        "tags": [
-          "User"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/WeatherForecast": {
       "get": {
         "tags": [
@@ -1247,61 +1022,6 @@
           },
           "createdBy": {
             "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "ApplyLoanDto": {
-        "type": "object",
-        "properties": {
-          "userId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "loanProductId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "requestedAmount": {
-            "type": "number",
-            "format": "double"
-          },
-          "requestedTenure": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "gender": {
-            "type": "string",
-            "nullable": true
-          },
-          "dob": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "aadhaar": {
-            "type": "string",
-            "nullable": true
-          },
-          "address": {
-            "type": "string",
-            "nullable": true
-          },
-          "income": {
-            "type": "number",
-            "format": "double"
-          },
-          "employmentType": {
-            "type": "string",
-            "nullable": true
-          },
-          "createdBy": {
-            "type": "string",
-            "nullable": true
-          },
-          "additionalDetails": {
-            "type": "object",
-            "additionalProperties": { },
             "nullable": true
           }
         },
@@ -1438,6 +1158,173 @@
         },
         "additionalProperties": false
       },
+      "GoldLoanApplicationDto": {
+        "required": [
+          "aadhaar",
+          "address",
+          "createdBy",
+          "dob",
+          "employmentType",
+          "gender",
+          "goldPurity",
+          "goldWeight",
+          "income",
+          "loanProductId",
+          "requestedAmount",
+          "requestedTenure",
+          "userId"
+        ],
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "loanProductId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "requestedAmount": {
+            "minimum": 1000,
+            "type": "number",
+            "format": "double"
+          },
+          "requestedTenure": {
+            "maximum": 360,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "gender": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "dob": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "aadhaar": {
+            "maxLength": 12,
+            "minLength": 12,
+            "pattern": "^\\d{12}$",
+            "type": "string"
+          },
+          "address": {
+            "maxLength": 500,
+            "minLength": 0,
+            "type": "string"
+          },
+          "income": {
+            "minimum": 0,
+            "type": "number",
+            "format": "double"
+          },
+          "employmentType": {
+            "minLength": 1,
+            "pattern": "^(Salaried|Self-Employed)$",
+            "type": "string"
+          },
+          "createdBy": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "goldWeight": {
+            "minimum": 0.1,
+            "type": "number",
+            "format": "double"
+          },
+          "goldPurity": {
+            "minLength": 1,
+            "pattern": "^(22K|24K)$",
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "HomeLoanApplicationDto": {
+        "required": [
+          "aadhaar",
+          "address",
+          "createdBy",
+          "dob",
+          "downPaymentPercentage",
+          "employmentType",
+          "gender",
+          "income",
+          "loanProductId",
+          "propertyAddress",
+          "requestedAmount",
+          "requestedTenure",
+          "userId"
+        ],
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "loanProductId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "requestedAmount": {
+            "minimum": 1000,
+            "type": "number",
+            "format": "double"
+          },
+          "requestedTenure": {
+            "maximum": 360,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "gender": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "dob": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "aadhaar": {
+            "maxLength": 12,
+            "minLength": 12,
+            "pattern": "^\\d{12}$",
+            "type": "string"
+          },
+          "address": {
+            "maxLength": 500,
+            "minLength": 0,
+            "type": "string"
+          },
+          "income": {
+            "minimum": 0,
+            "type": "number",
+            "format": "double"
+          },
+          "employmentType": {
+            "minLength": 1,
+            "pattern": "^(Salaried|Self-Employed)$",
+            "type": "string"
+          },
+          "createdBy": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "propertyAddress": {
+            "maxLength": 500,
+            "minLength": 0,
+            "type": "string"
+          },
+          "downPaymentPercentage": {
+            "maximum": 100,
+            "minimum": 0,
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
       "HowItWorksStepDto": {
         "type": "object",
         "properties": {
@@ -1517,6 +1404,11 @@
         "additionalProperties": false
       },
       "LoanEnquiryRequestDto": {
+        "required": [
+          "loanPurpose",
+          "name",
+          "phoneNumber"
+        ],
         "type": "object",
         "properties": {
           "name": {
@@ -1527,17 +1419,9 @@
             "type": "string",
             "nullable": true
           },
-          "email": {
-            "type": "string",
-            "nullable": true
-          },
           "loanAmount": {
             "type": "number",
             "format": "double"
-          },
-          "loanTerm": {
-            "type": "integer",
-            "format": "int32"
           },
           "loanPurpose": {
             "type": "string",
@@ -1631,6 +1515,77 @@
         },
         "additionalProperties": false
       },
+      "PersonalLoanApplicationDto": {
+        "required": [
+          "aadhaar",
+          "address",
+          "createdBy",
+          "dob",
+          "employmentType",
+          "gender",
+          "income",
+          "loanProductId",
+          "requestedAmount",
+          "requestedTenure",
+          "userId"
+        ],
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "loanProductId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "requestedAmount": {
+            "minimum": 1000,
+            "type": "number",
+            "format": "double"
+          },
+          "requestedTenure": {
+            "maximum": 360,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "gender": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "dob": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "aadhaar": {
+            "maxLength": 12,
+            "minLength": 12,
+            "pattern": "^\\d{12}$",
+            "type": "string"
+          },
+          "address": {
+            "maxLength": 500,
+            "minLength": 0,
+            "type": "string"
+          },
+          "income": {
+            "minimum": 0,
+            "type": "number",
+            "format": "double"
+          },
+          "employmentType": {
+            "minLength": 1,
+            "pattern": "^(Salaried|Self-Employed)$",
+            "type": "string"
+          },
+          "createdBy": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
       "RepaymentScheduleDto": {
         "type": "object",
         "properties": {
@@ -1701,26 +1656,6 @@
         },
         "additionalProperties": false
       },
-      "StringApiResponse": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "data": {
-            "type": "string",
-            "nullable": true
-          },
-          "message": {
-            "type": "string",
-            "nullable": true
-          },
-          "errors": {
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "SubmitPaymentDto": {
         "type": "object",
         "properties": {
@@ -1733,31 +1668,6 @@
             "format": "double"
           },
           "paymentMethod": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "UpdateUserDto": {
-        "type": "object",
-        "properties": {
-          "firstName": {
-            "type": "string",
-            "nullable": true
-          },
-          "lastName": {
-            "type": "string",
-            "nullable": true
-          },
-          "phoneNumber": {
-            "type": "string",
-            "nullable": true
-          },
-          "isActive": {
-            "type": "boolean"
-          },
-          "password": {
             "type": "string",
             "nullable": true
           }

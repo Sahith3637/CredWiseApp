@@ -17,59 +17,68 @@ public class LoanApplicationService : ILoanApplicationService
         _mapper = mapper;
     }
 
-    public async Task<LoanApplicationResponseDto> ApplyForLoanAsync(ApplyLoanDto dto)
+    public async Task<LoanApplicationResponseDto> ApplyForGoldLoanAsync(GoldLoanApplicationDto application)
     {
-        var loanProduct = await _loanApplicationRepository.GetLoanProductByIdAsync(dto.LoanProductId);
+        // Validate loan product type
+        var loanProduct = await _loanApplicationRepository.GetLoanProductByIdAsync(application.LoanProductId);
         if (loanProduct == null)
-            throw new KeyNotFoundException($"Loan product with ID {dto.LoanProductId} not found");
+            throw new KeyNotFoundException($"Loan product with ID {application.LoanProductId} not found");
+
+        if (loanProduct.LoanType != "GOLD")
+            throw new InvalidOperationException($"Invalid loan type. Expected GOLD but got {loanProduct.LoanType}");
 
         // Create base loan application
-        var loanApplication = new LoanApplication
+        var loanApplication = await CreateBaseLoanApplication(application);
+
+        // Create gold loan specific details
+        var goldLoanApplication = new GoldLoanApplication
         {
-            UserId = dto.UserId,
-            LoanProductId = dto.LoanProductId,
-            RequestedAmount = dto.RequestedAmount,
-            RequestedTenure = dto.RequestedTenure,
-            Gender = dto.Gender,
-            Dob = DateOnly.FromDateTime(dto.DOB),
-            Aadhaar = dto.Aadhaar,
-            Address = dto.Address,
-            Income = dto.Income,
-            EmploymentType = dto.EmploymentType,
-            Status = "Initial Review",
-            IsActive = true,
-            CreatedAt = DateTime.UtcNow,
-            CreatedBy = dto.CreatedBy
+            LoanApplication = loanApplication,
+            GoldWeight = application.GoldWeight,
+            GoldPurity = application.GoldPurity
         };
-        await _loanApplicationRepository.AddAsync(loanApplication);
 
-        // Handle type-specific details
-        if (loanProduct.LoanType == "GOLD")
-        {
-            var goldWeight = Convert.ToDecimal(dto.AdditionalDetails["GoldWeight"]);
-            var goldPurity = dto.AdditionalDetails["GoldPurity"].ToString();
-            var goldLoanApplication = new GoldLoanApplication
-            {
-                LoanApplication = loanApplication,
-                GoldWeight = goldWeight,
-                GoldPurity = goldPurity
-            };
-            await _loanApplicationRepository.AddGoldLoanApplicationAsync(goldLoanApplication);
-        }
-        else if (loanProduct.LoanType == "HOME")
-        {
-            var propertyAddress = dto.AdditionalDetails["PropertyAddress"].ToString();
-            var downPayment = Convert.ToDecimal(dto.AdditionalDetails["DownPaymentPercentage"]);
-            var homeLoanApplication = new HomeLoanApplication
-            {
-                LoanApplication = loanApplication,
-                PropertyAddress = propertyAddress,
-                DownPaymentPercentage = downPayment
-            };
-            await _loanApplicationRepository.AddHomeLoanApplicationAsync(homeLoanApplication);
-        }
-        // For PERSONAL, no extra details needed
+        await _loanApplicationRepository.AddGoldLoanApplicationAsync(goldLoanApplication);
+        return _mapper.Map<LoanApplicationResponseDto>(loanApplication);
+    }
 
+    public async Task<LoanApplicationResponseDto> ApplyForHomeLoanAsync(HomeLoanApplicationDto application)
+    {
+        // Validate loan product type
+        var loanProduct = await _loanApplicationRepository.GetLoanProductByIdAsync(application.LoanProductId);
+        if (loanProduct == null)
+            throw new KeyNotFoundException($"Loan product with ID {application.LoanProductId} not found");
+
+        if (loanProduct.LoanType != "HOME")
+            throw new InvalidOperationException($"Invalid loan type. Expected HOME but got {loanProduct.LoanType}");
+
+        // Create base loan application
+        var loanApplication = await CreateBaseLoanApplication(application);
+
+        // Create home loan specific details
+        var homeLoanApplication = new HomeLoanApplication
+        {
+            LoanApplication = loanApplication,
+            PropertyAddress = application.PropertyAddress,
+            DownPaymentPercentage = application.DownPaymentPercentage
+        };
+
+        await _loanApplicationRepository.AddHomeLoanApplicationAsync(homeLoanApplication);
+        return _mapper.Map<LoanApplicationResponseDto>(loanApplication);
+    }
+
+    public async Task<LoanApplicationResponseDto> ApplyForPersonalLoanAsync(PersonalLoanApplicationDto application)
+    {
+        // Validate loan product type
+        var loanProduct = await _loanApplicationRepository.GetLoanProductByIdAsync(application.LoanProductId);
+        if (loanProduct == null)
+            throw new KeyNotFoundException($"Loan product with ID {application.LoanProductId} not found");
+
+        if (loanProduct.LoanType != "PERSONAL")
+            throw new InvalidOperationException($"Invalid loan type. Expected PERSONAL but got {loanProduct.LoanType}");
+
+        // Create base loan application
+        var loanApplication = await CreateBaseLoanApplication(application);
         return _mapper.Map<LoanApplicationResponseDto>(loanApplication);
     }
 
@@ -92,5 +101,28 @@ public class LoanApplicationService : ILoanApplicationService
     {
         var applications = await _loanApplicationRepository.GetAllAsync();
         return _mapper.Map<IEnumerable<LoanApplicationResponseDto>>(applications);
+    }
+
+    private async Task<LoanApplication> CreateBaseLoanApplication(BaseLoanApplicationDto application)
+    {
+        var loanApplication = new LoanApplication
+        {
+            UserId = application.UserId,
+            LoanProductId = application.LoanProductId,
+            RequestedAmount = application.RequestedAmount,
+            RequestedTenure = application.RequestedTenure,
+            Gender = application.Gender,
+            Dob = DateOnly.FromDateTime(application.DOB),
+            Aadhaar = application.Aadhaar,
+            Address = application.Address,
+            Income = application.Income,
+            EmploymentType = application.EmploymentType,
+            Status = "Initial Review",
+            IsActive = true,
+            CreatedAt = DateTime.UtcNow,
+            CreatedBy = application.CreatedBy
+        };
+
+        return await _loanApplicationRepository.AddAsync(loanApplication);
     }
 } 
