@@ -76,7 +76,15 @@ public class LoanApplicationResponseDto
 {
     public int LoanApplicationId { get; set; }
     public string Status { get; set; } = null!;
-    public DateTime CreatedAt { get; set; }
-    public string? DecisionReason { get; set; }
     public DateTime? DecisionDate { get; set; }
+    public string? DecisionReason { get; set; }
+    public bool? IsActive { get; set; }
+    public DateTime? CreatedAt { get; set; }
+    public string? LoanType { get; set; }
+    public int UserId { get; set; }
+    public string Gender { get; set; } = null!;
+    public int LoanProductId { get; set; }
+    public decimal RequestedAmount { get; set; }
+    public int RequestedTenure { get; set; }
+    public decimal InterestRate { get; set; }
 } 

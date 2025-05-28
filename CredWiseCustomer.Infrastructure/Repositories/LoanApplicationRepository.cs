@@ -18,6 +18,7 @@ public class LoanApplicationRepository : ILoanApplicationRepository
     public async Task<LoanApplication> GetByIdAsync(int id)
     {
         return await _context.LoanApplications
+            .Include(x => x.LoanProduct)
             .Include(x => x.GoldLoanApplications)
             .Include(x => x.HomeLoanApplications)
             .FirstOrDefaultAsync(x => x.LoanApplicationId == id);
@@ -26,6 +27,7 @@ public class LoanApplicationRepository : ILoanApplicationRepository
     public async Task<IEnumerable<LoanApplication>> GetByUserIdAsync(int userId)
     {
         return await _context.LoanApplications
+            .Include(x => x.LoanProduct)
             .Include(x => x.GoldLoanApplications)
             .Include(x => x.HomeLoanApplications)
             .Where(x => x.UserId == userId)
@@ -81,6 +83,7 @@ public class LoanApplicationRepository : ILoanApplicationRepository
     public async Task<IEnumerable<LoanApplication>> GetAllAsync()
     {
         return await _context.LoanApplications
+            .Include(x => x.LoanProduct)
             .Include(x => x.GoldLoanApplications)
             .Include(x => x.HomeLoanApplications)
             .OrderByDescending(x => x.CreatedAt)

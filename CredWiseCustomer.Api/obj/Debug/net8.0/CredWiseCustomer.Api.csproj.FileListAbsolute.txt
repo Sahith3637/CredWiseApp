@@ -802,4 +802,3 @@ C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Api\obj\De
 C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Api\obj\Debug\net8.0\CredWiseCustomer.Api.genruntimeconfig.cache
 C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Api\obj\Debug\net8.0\ref\CredWiseCustomer.Api.dll
 C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Api\obj\Debug\net8.0\CredWiseCustomer.Api.MvcApplicationPartsAssemblyInfo.cs
-C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Api\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
