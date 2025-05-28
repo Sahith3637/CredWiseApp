@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{19A976FF-9EB1-476B-8DE8-36014C361B26}|CredWiseCustomer.Api\\CredWiseCustomer.Api.csproj|solutionrelative:credwisecustomer.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{9E074E59-B859-4764-A366-E6E9731D0042}|CredWiseCustomer.Application\\CredWiseCustomer.Application.csproj|c:\\applications\\credwise\\backiness\\credwise\\credwise\\credwisecustomer.application\\mappings\\loanenquiryprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E074E59-B859-4764-A366-E6E9731D0042}|CredWiseCustomer.Application\\CredWiseCustomer.Application.csproj|solutionrelative:credwisecustomer.application\\mappings\\loanenquiryprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9E074E59-B859-4764-A366-E6E9731D0042}|CredWiseCustomer.Application\\CredWiseCustomer.Application.csproj|c:\\applications\\credwise\\backiness\\credwise\\credwise\\credwisecustomer.application\\services\\loanapplicationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9E074E59-B859-4764-A366-E6E9731D0042}|CredWiseCustomer.Application\\CredWiseCustomer.Application.csproj|solutionrelative:credwisecustomer.application\\services\\loanapplicationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -62,7 +66,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -70,7 +74,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
+              "Title": "LoanEnquiryProfile.cs",
+              "DocumentMoniker": "C:\\Applications\\CredWise\\Backiness\\CredWise\\CredWise\\CredWiseCustomer.Application\\Mappings\\LoanEnquiryProfile.cs",
+              "RelativeDocumentMoniker": "CredWiseCustomer.Application\\Mappings\\LoanEnquiryProfile.cs",
+              "ToolTip": "C:\\Applications\\CredWise\\Backiness\\CredWise\\CredWise\\CredWiseCustomer.Application\\Mappings\\LoanEnquiryProfile.cs",
+              "RelativeToolTip": "CredWiseCustomer.Application\\Mappings\\LoanEnquiryProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T09:05:59.236Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "LoanApplicationRepository.cs",
               "DocumentMoniker": "C:\\Applications\\CredWise\\Backiness\\CredWise\\CredWise\\CredWiseCustomer.Infrastructure\\Repositories\\LoanApplicationRepository.cs",
               "RelativeDocumentMoniker": "CredWiseCustomer.Infrastructure\\Repositories\\LoanApplicationRepository.cs",
@@ -83,7 +100,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "ILoanApplicationService.cs",
               "DocumentMoniker": "C:\\Applications\\CredWise\\Backiness\\CredWise\\CredWise\\CredWiseCustomer.Application\\Interfaces\\ILoanApplicationService.cs",
               "RelativeDocumentMoniker": "CredWiseCustomer.Application\\Interfaces\\ILoanApplicationService.cs",
@@ -96,7 +113,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "ILoanApplicationRepository.cs",
               "DocumentMoniker": "C:\\Applications\\CredWise\\Backiness\\CredWise\\CredWise\\CredWiseCustomer.Application\\Interfaces\\ILoanApplicationRepository.cs",
               "RelativeDocumentMoniker": "CredWiseCustomer.Application\\Interfaces\\ILoanApplicationRepository.cs",
@@ -109,7 +126,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "LoanService.cs",
               "DocumentMoniker": "C:\\Applications\\CredWise\\Backiness\\CredWise\\CredWise\\CredWiseCustomer.Application\\Services\\LoanService.cs",
               "RelativeDocumentMoniker": "CredWiseCustomer.Application\\Services\\LoanService.cs",
@@ -122,7 +139,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "LoanApplicationService.cs",
               "DocumentMoniker": "C:\\Applications\\CredWise\\Backiness\\CredWise\\CredWise\\CredWiseCustomer.Application\\Services\\LoanApplicationService.cs",
               "RelativeDocumentMoniker": "CredWiseCustomer.Application\\Services\\LoanApplicationService.cs",
@@ -141,14 +158,14 @@
               "RelativeDocumentMoniker": "CredWiseCustomer.Api\\Program.cs",
               "ToolTip": "C:\\Applications\\CredWise\\Backiness\\CredWise\\CredWise\\CredWiseCustomer.Api\\Program.cs",
               "RelativeToolTip": "CredWiseCustomer.Api\\Program.cs",
-              "ViewState": "AgIAADEAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADcAAAAAAAAAAAAAAEIAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-28T06:22:49.483Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Applications\\CredWise\\Backiness\\CredWise\\CredWise\\CredWise.Utills\\Entities\\AppDbContext.cs",
               "RelativeDocumentMoniker": "CredWise.Utills\\Entities\\AppDbContext.cs",
@@ -160,7 +177,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Fdtype.cs",
               "DocumentMoniker": "C:\\Applications\\CredWise\\Backiness\\CredWise\\CredWise\\CredWiseCustomer.Core\\Entities\\Fdtype.cs",
               "RelativeDocumentMoniker": "CredWiseCustomer.Core\\Entities\\Fdtype.cs",
@@ -172,7 +189,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "LoanController.cs",
               "DocumentMoniker": "C:\\Applications\\CredWise\\Backiness\\CredWise\\CredWise\\CredWiseCustomer.Api\\Controllers\\LoanController.cs",
               "RelativeDocumentMoniker": "CredWiseCustomer.Api\\Controllers\\LoanController.cs",
@@ -185,7 +202,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "SubmitPaymentDto.cs",
               "DocumentMoniker": "C:\\Applications\\CredWise\\Backiness\\CredWise\\CredWise\\CredWiseCustomer.Application\\DTOs\\SubmitPaymentDto.cs",
               "RelativeDocumentMoniker": "CredWiseCustomer.Application\\DTOs\\SubmitPaymentDto.cs",
@@ -197,7 +214,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "RepaymentService.cs",
               "DocumentMoniker": "C:\\Applications\\CredWise\\Backiness\\CredWise\\CredWise\\CredWiseCustomer.Application\\Services\\RepaymentService.cs",
               "RelativeDocumentMoniker": "CredWiseCustomer.Application\\Services\\RepaymentService.cs",
@@ -209,7 +226,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Applications\\CredWise\\Backiness\\CredWise\\CredWise\\CredWiseCustomer.Api\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "CredWiseCustomer.Api\\Controllers\\UserController.cs",
@@ -221,7 +238,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "FdProfile.cs",
               "DocumentMoniker": "C:\\Applications\\CredWise\\Backiness\\CredWise\\CredWise\\CredWiseCustomer.Application\\Mappings\\FdProfile.cs",
               "RelativeDocumentMoniker": "CredWiseCustomer.Application\\Mappings\\FdProfile.cs",

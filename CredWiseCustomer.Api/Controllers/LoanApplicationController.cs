@@ -17,48 +17,12 @@ public class LoanApplicationController : ControllerBase
         _loanApplicationService = loanApplicationService;
     }
 
-    [HttpPost("gold")]
-    public async Task<ActionResult<LoanApplicationResponseDto>> ApplyForGoldLoan([FromBody] GoldLoanApplicationDto application)
+    [HttpPost]
+    public async Task<ActionResult<LoanApplicationResponseDto>> ApplyForLoan([FromBody] ApplyLoanDto dto)
     {
         try
         {
-            var result = await _loanApplicationService.ApplyForGoldLoanAsync(application);
-            return Ok(result);
-        }
-        catch (KeyNotFoundException ex)
-        {
-            return NotFound(ex.Message);
-        }
-        catch (InvalidOperationException ex)
-        {
-            return BadRequest(ex.Message);
-        }
-    }
-
-    [HttpPost("home")]
-    public async Task<ActionResult<LoanApplicationResponseDto>> ApplyForHomeLoan([FromBody] HomeLoanApplicationDto application)
-    {
-        try
-        {
-            var result = await _loanApplicationService.ApplyForHomeLoanAsync(application);
-            return Ok(result);
-        }
-        catch (KeyNotFoundException ex)
-        {
-            return NotFound(ex.Message);
-        }
-        catch (InvalidOperationException ex)
-        {
-            return BadRequest(ex.Message);
-        }
-    }
-
-    [HttpPost("personal")]
-    public async Task<ActionResult<LoanApplicationResponseDto>> ApplyForPersonalLoan([FromBody] PersonalLoanApplicationDto application)
-    {
-        try
-        {
-            var result = await _loanApplicationService.ApplyForPersonalLoanAsync(application);
+            var result = await _loanApplicationService.ApplyForLoanAsync(dto);
             return Ok(result);
         }
         catch (KeyNotFoundException ex)

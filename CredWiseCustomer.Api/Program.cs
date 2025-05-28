@@ -63,7 +63,8 @@ builder.Services.AddScoped<IRepaymentService, RepaymentService>();
 builder.Services.AddScoped<IReturnsCalculatorService, ReturnsCalculatorService>();
 builder.Services.AddScoped<ILoanApplicationService, LoanApplicationService>();
 builder.Services.AddScoped<ILoanApplicationRepository, LoanApplicationRepository>();
-
+builder.Services.AddScoped<ILoanEnquiryRepository, LoanEnquiryRepository>();
+builder.Services.AddScoped<ILoanEnquiryService, LoanEnquiryService>();
 
 // Register validators
 builder.Services.AddScoped<IValidator<CreateUserDto>, CreateUserDtoValidator>();
@@ -183,8 +184,21 @@ if (authConfig == null)
 builder.Services.AddSingleton(authConfig);
 builder.Services.AddScoped<Authentication.Service.Interfaces.IAuthenticationService, Authentication.Service.Services.JwtAuthenticationService>();
 
+
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAngularDev",
+        policy =>
+        {
+            policy.WithOrigins("http://localhost:4200")
+                  .AllowAnyHeader()
+                  .AllowAnyMethod();
+        });
+});
 var app = builder.Build();
- 
+app.UseCors("AllowAngularDev");
+
 // Configure the HTTP request pipeline
 if (app.Environment.IsDevelopment())
 {

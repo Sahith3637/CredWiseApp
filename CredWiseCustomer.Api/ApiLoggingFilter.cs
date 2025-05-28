@@ -20,7 +20,7 @@ namespace CredWiseCustomer.Api
             var method = httpContext.Request.Method;
 
             // Try to get user info from claims
-            var userId = httpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "Anonymous";
+            var userId = httpContext.User.FindFirst("nameid")?.Value ?? "Anonymous";
             var userType = httpContext.User.FindFirst("role")?.Value ?? "Anonymous";
 
             _logger.LogApiRequest(method, endpoint, $"API {method} request by {userType} (ID: {userId})");
