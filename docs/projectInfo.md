@@ -1,6 +1,8 @@
 # CredWise Customer Management System
 
 ## Recent Updates
+- **Loan Enquiry API**: Added new endpoint `POST /api/LoanEnquiry` for submitting loan enquiries with name, phone number, loan amount, and purpose.
+- **API Logging**: Enhanced API logging to include user ID and user type for all API calls.
 - **Loan Product Documents**: Added support for associating documents with specific loan applications through the `LoanApplicationId` field.
 - **Get All Loan Applications**: Added new endpoint `GET /api/LoanApplication/all` in `LoanApplicationController` to retrieve all loan applications with user and product details.
 - **Loan Application APIs**: Gold, Home, and Personal loan application APIs are now available in `LoanApplicationController`.
@@ -10,6 +12,7 @@
 - **DTO Documentation**: All DTOs for user, loan, repayment, FD, and document management are now documented in this file for easy reference.
 - **API Endpoint Documentation**: All major endpoints are listed with their request/response DTOs and usage examples.
 - **Payment History by User**: Added `GET /api/Repayment/user/{userId}/payment-history` endpoint to fetch all payment transactions for a user.
+- **Meta Data Endpoints for Dropdowns**: Added `MetaController` with endpoints to fetch gender and employment type options for UI dropdowns. This allows the frontend to dynamically populate these fields instead of hardcoding them.
 
 ## Project Overview
 CredWise Customer Management System is a .NET 8.0 based application that provides comprehensive user, loan, repayment, and document management functionality with secure authentication and authorization features.
@@ -187,6 +190,19 @@ The solution is organized into multiple projects following Clean Architecture pr
 - **Get Steps**: `GET /api/HowItWorks`
   - Response: List of `HowItWorksStepDto` (see below)
 
+### Loan Enquiry Management
+- **Submit Loan Enquiry**: `POST /api/LoanEnquiry`
+  - Request: `LoanEnquiryRequestDto` (see DTOs section)
+  - Response: `LoanEnquiryResponseDto`
+
+### Meta Data (Dropdown Options)
+- **Get Genders**: `GET /api/meta/genders`
+  - Response: `[ { "value": "Male", "label": "Male" }, { "value": "Female", "label": "Female" }, { "value": "Other", "label": "Other" } ]`
+- **Get Employment Types**: `GET /api/meta/employment-types`
+  - Response: `[ { "value": "Salaried", "label": "Salaried" }, { "value": "Self-Employed", "label": "Self-Employed" } ]`
+
+These endpoints are intended for use by the UI to populate dropdowns for gender and employment type, ensuring consistency and maintainability across the application.
+
 ---
 
 ## DTOs (Data Transfer Objects)
@@ -220,74 +236,19 @@ The solution is organized into multiple projects following Clean Architecture pr
 ### How It Works
 - `HowItWorksStepDto`: StepNumber, Title, Description
 
+### Loan Enquiry
+- `LoanEnquiryRequestDto`: Name, PhoneNumber, LoanAmount, LoanPurpose
+- `LoanEnquiryResponseDto`: EnquiryId, Name, PhoneNumber, LoanAmountRequired, LoanPurpose, CreatedAt
+
+### Meta Data (Dropdown Options)
+- **Get Genders**: `GET /api/meta/genders`
+  - Response: `[ { "value": "Male", "label": "Male" }, { "value": "Female", "label": "Female" }, { "value": "Other", "label": "Other" } ]`
+- **Get Employment Types**: `GET /api/meta/employment-types`
+  - Response: `[ { "value": "Salaried", "label": "Salaried" }, { "value": "Self-Employed", "label": "Self-Employed" } ]`
+
+These endpoints are intended for use by the UI to populate dropdowns for gender and employment type, ensuring consistency and maintainability across the application.
+
 ---
 
 ## Example: How It Works API Response
-```json
-[
-  {
-    "stepNumber": 1,
-    "title": "Apply for the Loan",
-    "description": "Go to the Apply Now page, enter your details for the loan application and apply for the loan."
-  },
-  {
-    "stepNumber": 2,
-    "title": "Submit Your Documents",
-    "description": "As per the requirements of documents, submit your documents and get the response shortly."
-  },
-  {
-    "stepNumber": 3,
-    "title": "Wait for the Approval",
-    "description": "Once the documents are submitted, your loan approval takes a few hours only."
-  },
-  {
-    "stepNumber": 4,
-    "title": "Get Disbursal",
-    "description": "Get the disbursal directly in your linked account and use the fund as per the requirements."
-  }
-]
 ```
-
----
-
-## Development Environment
-- .NET 8.0
-- Development server: http://localhost:5279
-- Environment: Development
-
-## Dependencies
-- FluentValidation.AspNetCore (11.3.0)
-- Swashbuckle.AspNetCore (6.6.2)
-- AutoMapper
-- Entity Framework Core
-- Microsoft.IdentityModel.Tokens (7.3.1)
-- System.IdentityModel.Tokens.Jwt (7.3.1)
-
-## Future Improvements
-1. **Global Exception Handling**
-   - Add global exception handler middleware
-   - Implement comprehensive logging
-2. **Security Enhancements**
-   - Implement rate limiting
-   - Add request validation for SQL injection prevention
-   - Configure CORS policies
-3. **Documentation**
-   - Add XML documentation for API endpoints
-   - Enhance Swagger documentation
-   - Add API versioning
-4. **Testing**
-   - Add unit tests
-   - Add integration tests
-   - Add API tests
-
-## Getting Started
-1. Clone the repository
-2. Restore NuGet packages
-3. Update database connection string in appsettings.json
-4. Run database migrations
-5. Start the application using:
-   ```bash
-   dotnet run --project CredWiseCustomer.Api/CredWiseCustomer.Api.csproj
-   ```
-6. Access the API at http://localhost:5279
-7. Access Swagger documentation at http://localhost:5279/swagger

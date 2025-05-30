@@ -796,7 +796,6 @@ C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Api\obj\De
 C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Api\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.CredWiseCustomer.Api.props
 C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Api\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.CredWiseCustomer.Api.props
 C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Api\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Api\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Api\obj\Debug\net8.0\CredWise.B13B0613.Up2Date
 C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Api\obj\Debug\net8.0\CredWiseCustomer.Api.dll
 C:\Applications\CredWise\Backiness\CredWise\CredWise\CredWiseCustomer.Api\obj\Debug\net8.0\refint\CredWiseCustomer.Api.dll
